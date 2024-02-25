@@ -1,0 +1,33 @@
+{% extends "base.html" %} 
+{% load static %}
+{% block content %} 
+<div style="width: 50%; margin: auto">
+  <br />
+  <h1 style="width: 100%;text-align: center;background-color: green;color: white;padding: 7px;">
+    My Blogs
+  </h1>
+  <br />
+</div>
+
+<div style="width: 50%;margin: auto;">
+    {% if user.is_authenticated %}
+      <div class="d-grid gap-2 d-md-block">
+        <a href="{% url 'add_blog' %}" class="btn btn-danger" type="button">Add Blog</a>
+        <br/>
+        <br/>        
+      </div>
+    {% endif %}
+
+  {% for i in blogs %}
+    <div class="card mb-3">
+      <img src="{{ i.image.url }}" style="height:300px;weight:300px;margin:auto" class="card-img-top" alt="{{ i.title }}">
+      <div class="card-body">
+        <a href="{%static './blog/blog1.html'%}"><h3 class="card-title">{{ i.title }}</h3></a>
+        <p class="card-text">{{ i.descriptions }} <br/></p>
+        <p class="card-text"><small class="text-body-secondary"><b>{{i.timestamp}} 📌</b></small></p>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %} 
+

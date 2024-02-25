@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div style="width: 50%; margin: auto;">
+        <br/>
+        <h1 style="width: 100%;text-align: center; background-color: green; color: white; padding: 7px;">
+            Feedback
+        </h1>
+        <h1 style="width: 100%;text-align: center; ">
+            <button type="button" class="btn btn-danger" > ⚠️ Practice Mode ⚠️</button>
+        </h1>
+    </div>
+
+<div class="container text-left">
+    <a href="{% url 'review' %}">
+        <button class="btn btn-info" type="button">Inspire Me</button>
+    </a>
+    <br/>
+    <br/>
+    <div class="row">
+        {% for item in data %}
+            <div class="col-md-4">
+                <div class="card mb-3" style="height: 250px;"> <!-- Set a fixed height, adjust as needed -->
+                    <div class="row g-0">
+                        <div style="width: 100px;" class="col-md-3">
+                            <img src="{% static 'images/reviewer.png' %}" class="img-fluid rounded-circle" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ item.Name }}</h5>
+                                <p class="card-text">{{ item.Rating }}<small class="text-body-secondary"></small></p>
+                                <p class="card-text">{{ item.Comment }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
