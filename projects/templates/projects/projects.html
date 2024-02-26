@@ -41,6 +41,28 @@
                                 <a href="#" class="btn btn-info">Live Site</a>
                                 <a href="#" class="btn btn-danger">feedback</a>
                             </div>
+
+                            <div class="mt-3">
+                                <hr/>
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <label for="review_text">Leave a Review:</label>
+                                    <textarea class="form-control" name="review_text" rows="3"></textarea>
+                                    
+                                    <label for="star_rating">Rating:</label>
+                                    <select class="form-control" name="star_rating">
+                                        <option value="1">⭐</option>
+                                        <option value="2">⭐⭐</option>
+                                        <option value="3">⭐⭐⭐</option>
+                                        <option value="4">⭐⭐⭐⭐</option>
+                                        <option value="5">⭐⭐⭐⭐⭐</option>
+                                        <option value="6">⭐⭐⭐⭐⭐⭐</option>
+                                        <option value="7">⭐⭐⭐⭐⭐⭐⭐</option>
+
+                                    </select>
+                                    <button type="submit" class="btn btn-primary mt-2">Submit Review</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
