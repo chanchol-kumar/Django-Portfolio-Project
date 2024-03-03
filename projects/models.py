@@ -9,7 +9,7 @@ class ProjectsModel(models.Model):
     )
     
     category = models.CharField(max_length=30, choices=CHOICES)
-    image = models.ImageField(upload_to='project_img/')
+    image = models.ImageField(upload_to='project/media/')
     title = models.CharField(max_length=100)
     descriptions = models.TextField(max_length=500)
     technology = models.CharField(max_length=100)

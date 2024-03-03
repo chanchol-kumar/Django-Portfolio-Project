@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% block content %}
-{% load crispy_forms_tags %}
     <div style="width: 50%; margin: auto;">
         <br/>
         <h1 style="width: 100%;text-align: center; background-color: green; color: white; padding: 7px;">
@@ -11,7 +10,7 @@
         <br/>
         <form method="post">
             {% csrf_token %}
-            {{ form|crispy }}
+            {{ form.as_p }}
             <button class="btn btn-primary" type="submit">Submit</button>
         </form>
     </div>    
