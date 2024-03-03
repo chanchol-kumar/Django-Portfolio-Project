@@ -8,7 +8,7 @@ def add_blog(request):
         form = BlogForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('projects')
+            return redirect('blog')
     else:
         form = BlogForm()
     return render(request, 'blog/add_blog.html', {'form':form})

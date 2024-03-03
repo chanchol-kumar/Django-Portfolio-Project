@@ -2,11 +2,14 @@
 {% load static %}
 
 {% block content %}
+    <br/>
     <div class="container" style="width: 50%;">
         <div class="text-center bg-success text-white py-2">
             <h1>My Skills</h1>
         </div>
     </div>
+    <br/>
+    <br/>
 
     <div class="container" style="width: 80%;">
         {% if user.is_authenticated %}
@@ -21,7 +24,7 @@
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 text-center">
                         <div class="card-body">
-                            <img src="{{ i.icon }}" class="card-img-top" alt="{{ i.skill_name }} Icon" style="max-width: 30%; height: auto;">
+                            <img src="{{ i.icon.url }}" class="card-img-top" alt="{{ i.skill_name }} Icon" style="max-width: 30%; height: auto;">
                             <h3 class="card-title font-weight-bold">{{ i.skill_name }}</h3>
                             <div class="progress" role="progressbar" aria-valuenow="{{ i.proficiency }}" aria-valuemin="0" aria-valuemax="100">
                                 <div class="progress-bar w-{{ i.proficiency }}"></div>

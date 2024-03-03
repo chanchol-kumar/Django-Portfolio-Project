@@ -8,13 +8,13 @@ class ProjectsModel(models.Model):
         ('Machine Learning', 'Machine Learning'),
     )
     
-    category = models.CharField(max_length=30, choices=CHOICES,null=True, blank=True)
-    image = models.ImageField(upload_to='project_img/', null=True, blank=True)
+    category = models.CharField(max_length=30, choices=CHOICES)
+    image = models.ImageField(upload_to='project_img/')
     title = models.CharField(max_length=100)
     descriptions = models.TextField(max_length=500)
-    technology = models.CharField(max_length=100,null=True, blank=True)
-    git_link = models.URLField(max_length=100, null=True, blank=True)
-    live_link = models.URLField(max_length=100, null=True, blank=True)
+    technology = models.CharField(max_length=100)
+    git_link = models.URLField(max_length=100)
+    live_link = models.URLField(max_length=100)
     timestamp = models.DateTimeField(auto_now_add=True) 
     
     def __str__(self):
