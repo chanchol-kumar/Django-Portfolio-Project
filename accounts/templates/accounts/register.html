@@ -3,13 +3,13 @@
   <div style="width: 50%; margin: auto;">
         <br/>
         <h1 style="width: 100%;text-align: center; background-color: green; color: white; padding: 7px;">
-            Contact Me
+            Registration form
         </h1>
   </div>
   <div style="width: 50%; margin: auto;">
     <form method="post" action="{% url 'register' %}">
       {% csrf_token %}
-      {{ form}}
+      {{ form.as_p }}
       <button class="btn btn-primary" type="submit">Submit</button>
     </form>
   </div>
